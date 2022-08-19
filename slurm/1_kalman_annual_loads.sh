@@ -15,7 +15,7 @@
 #SBATCH --time=30:00:00                 # Time limit hrs:min:sec
 #SBATCH --output=logs/array_%A-%a.out        # Standard output and error log
 #SBATCH --array=1-1008                    # Array range, must match N_ARRAY
-#SBATCH --job-name=awqmn                # Job name
+#SBATCH --job-name=ambient                # Job name
 #SBATCH --ntasks=1                     # Number of tasks to run
 #SBATCH --nodes=1    
 #SBATCH --cpus-per-task=1               # Number of cpus per processes
@@ -42,7 +42,8 @@ SEED=0 # starting bootstrap
 # load appropriate modules
 module purge
 module load gnu8/8.3.0
-module load R/3.6.3
+#module load R/3.6.3
+module load R/4.2.0
 
 # Print the task and run range
 #echo This is task $SLURM_ARRAY_TASK_ID

@@ -8,7 +8,7 @@ meanflow_by_year <-function(q, dates, wy=FALSE) {
         years <- calc_wy(dates)
     }
 
-    year_list <- unique(years)A
+    year_list <- unique(years)
 
     fl
  

@@ -8,7 +8,7 @@
 # all users.
 # See: https://help.rc.ufl.edu/doc/SLURM_Job_Arrays
 
-#SBATCH --job-name=nrec                 # Job name
+#SBATCH --job-name=ambient_dr           # Job name
 #SBATCH --account=cmwsc
 #SBATCH -p normal
 #SBATCH --time=04:00:00                 # Time limit hrs:min:sec
