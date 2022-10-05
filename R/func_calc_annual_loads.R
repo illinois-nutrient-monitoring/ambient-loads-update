@@ -48,6 +48,7 @@ flowdays_by_year <- function(dates, wy=FALSE) {
     return(obs)
 }
 
+
 samples_by_year <- function(dates, wy=FALSE) {
     if (!wy){
         years <- lubridate::year(dates)
