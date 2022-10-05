@@ -53,6 +53,7 @@ w_readNWISDaily <- function(siteID, parameter, start_date, end_date) {
     if (siteID == '05550000'){
         daily <- readNWISDaily_0555000(start_date, end_date)
     } else if (siteID =='05563800') {
+        print('Generate Pekin Elist')
         daily <- readNWISDaily_05563800(start_date, end_date)
     } else if (siteID =='05599490') {
         daily <- readNWISDaily_BM(start_date, end_date)
@@ -109,18 +110,19 @@ readNWISDaily_05563800 <- function(start_date, end_date) {
 	illinois_river <- format_rdb('05568500', '00060', start_date, end_date)
 	mackinaw_river <- format_rdb('05568000', '00060', start_date, end_date)
 
-	temp <- merge(mackinaw_river, illinois_river, by='dateTime', all=True)
+	temp <- merge(mackinaw_river, illinois_river, by='dateTime', all=TRUE)
 	q <- temp$value.y - temp$value.x #subtract Mackinaw contribution from Illinois
 	# rescale by drainage area
-	q <- q*  # 14,585.00
+	q <- q *  14585/(15818-1073)
 	q <- q[!is.na(q)]
 	# write back to Mackinaw dataframe
 	mackinaw_river$value <- q
 	mackinaw_river$site <- '05563800' #Illinois River at Peking
 	#merge and difference
 	# format to READNWISdaily
-	qConvert <- ifelse("00060" == parameterCd, 35.314667, 1)
-	Daily <- populateDaily(temp,qConvert,verbose = verbose)
+	#qConvert <- ifelse("00060" == parameterCd, 35.314667, 1)
+        qConvert <- 35.314667
+	Daily <- populateDaily(mackinaw_river, qConvert)
 
 	return(Daily)
 }
