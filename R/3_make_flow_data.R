@@ -6,13 +6,15 @@ library(lubridate)
 
 
 setwd("~/projects/ambient-loads-update/R")
-setwd("c:/Users/thodson/Desktop/Projects/illinois-nutrient-monitoring/ambient-loads-update/R")
+#setwd("c:/Users/thodson/Desktop/Projects/illinois-nutrient-monitoring/ambient-loads-update/R")
 # source('readNwISSample.R')
 source('yeti_functions.R')
 source('stretchInterval.r')
 source('func_calc_annual_loads.R')
-
-df <- read.csv('c:/Users/thodson/Desktop/Projects/illinois-nutrient-monitoring/ambient-loads-update/illinois_ambient_annual_loads_wrtdsk.csv',
+data_csv <- '/lustre/projects/water/cmwsc/thodson/ambient-loads-update/data_release/illinois_ambient_annual_loads_wrtdsk.csv'
+out_csv <- '/lustre/projects/water/cmwsc/thodson/ambient-loads-update/data_release/illinois_ambient_annual_flow.csv'
+#df <- read.csv('c:/Users/thodson/Desktop/Projects/illinois-nutrient-monitoring/ambient-loads-update/illinois_ambient_annual_loads_wrtdsk.csv',
+df <- read.csv(data_csv,
                colClasses= c("site_no"="character"))
 
 sites <- unique(df$site_no)
@@ -37,6 +39,5 @@ for (site in sites){
 }
 
 write.csv(output, 
-          'c:/Users/thodson/Desktop/Projects/ambient/ambient-biennial23-report/data/illinois_ambient_annual_flow.csv',
+          out_csv,
           row.names=FALSE)
-

@@ -65,6 +65,7 @@ runAnalysis <- function(i) {
   # get site ID ----------
   siteID = sites[i %% length(sites) + 1] 
   # XXX run specific sites
+  if (!siteID %in% c('05563800')) {stop()}
   #if (!siteID %in% c('411925089063901','404208089335201','05558300')) {stop()}
   #if (!siteID %in% c('05586100','03339000')) {stop()}
 
