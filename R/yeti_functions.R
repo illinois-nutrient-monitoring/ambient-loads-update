@@ -51,7 +51,7 @@ readNWISSample <- function(con, tablename, siteNumber,parameterCd,startDate="",e
 #3   1978-04-11    0.00     0.10     0
 w_readNWISDaily <- function(siteID, parameter, start_date, end_date) {
     if (siteID == '05550000'){
-        daily <- readNWISDaily_0555000(start_date, end_date)
+        daily <- readNWISDaily_05550000(start_date, end_date)
     } else if (siteID =='05563800') {
         print('Generate Pekin Elist')
         daily <- readNWISDaily_05563800(start_date, end_date)

@@ -14,7 +14,7 @@
 #SBATCH --partition=long
 #SBATCH --time=30:00:00                 # Time limit hrs:min:sec
 #SBATCH --output=logs/array_%A-%a.out        # Standard output and error log
-#SBATCH --array=1-1008                    # Array range, must match N_ARRAY
+#SBATCH --array=1-1118                    # Array range, must match N_ARRAY
 #SBATCH --job-name=ambient                # Job name
 #SBATCH --ntasks=1                     # Number of tasks to run
 #SBATCH --nodes=1    
@@ -33,7 +33,7 @@ DB=$BASE_PATH/ambient_2023.sqlite
 PROJECT_PATH=/lustre/projects/water/cmwsc/thodson/ambient-loads-update
 
 SITE_N=86                               # Number of sites
-PARAM_N=12
+PARAM_N=13
 N=$[$SITE_N * $PARAM_N] # should equal number of arrays
 SEED=0 # starting bootstrap
 #200? in each run, so increment SEED by 200 to add more 
