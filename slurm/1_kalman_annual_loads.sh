@@ -33,7 +33,7 @@ DB=$BASE_PATH/ambient_2023.sqlite
 PROJECT_PATH=/lustre/projects/water/cmwsc/thodson/ambient-loads-update
 
 SITE_N=86                               # Number of sites
-PARAM_N=13
+PARAM_N=14
 N=$[$SITE_N * $PARAM_N] # should equal number of arrays
 SEED=0 # starting bootstrap
 #200? in each run, so increment SEED by 200 to add more 

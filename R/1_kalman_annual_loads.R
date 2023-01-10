@@ -47,7 +47,7 @@ sites <- unlist(response, use.names=FALSE)
 junk <- dbDisconnect(con)
 
 
-params <- c("00600","99220","00530","00630","00625","00610","00665","00666","00667", "00946", "80154","00535", "01045")
+params <- c("00600","99220","00530","00630","00625","00610","00665","00666","00667", "00946", "80154","00535", "01045", "01046")
 #params <- c("01045")
 
 #usedStartYear <- startYear #used to alter start of specific runs

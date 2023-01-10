@@ -31,9 +31,9 @@ R_PATH=$BASE_PATH/R
 DB=$BASE_PATH/ambient_2023.sqlite
 
 SITE_N=86                               # Number of sites
-PARAM_N=13
+PARAM_N=14
 N=$[$SITE_N * $PARAM_N]
-N_ARRAY=13
+N_ARRAY=14
 PER_TASK=$[$N/$N_ARRAY + 1] #NOTE: PER_TASK should be PER_ARRAY
 
 # Calculate the starting and ending values for this task based
